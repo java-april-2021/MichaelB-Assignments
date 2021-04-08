@@ -8,13 +8,11 @@ public class StringManipulator{
 
     //Gets the index of a character in a string
     public Integer getIndexOrNull(String string, char character){
-        if(string.indexOf(character) == -1){
-            Integer val = null;
-            return (Integer) val;
+        int val = string.indexOf(character);
+        if(val == -1){
+            return null;
         }
-        else{
-            return string.indexOf(character);
-        }
+        return val;
         
     }
 }

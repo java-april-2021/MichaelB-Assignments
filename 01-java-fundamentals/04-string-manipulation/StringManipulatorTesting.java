@@ -4,9 +4,9 @@ public class StringManipulatorTesting{
         String str = manipulator.trimAndConcat("   Hello   ", "   World   ");
         System.out.println(str);
         char letter = 'o';
-        int a = manipulator.getIndexOrNull("coding", letter);
-        int b = manipulator.getIndexOrNull("Hello World", letter);
-        int c = manipulator.getIndexOrNull("Hi", letter);
+        Integer a = manipulator.getIndexOrNull("coding", letter);
+        Integer b = manipulator.getIndexOrNull("Hello World", letter);
+        Integer c = manipulator.getIndexOrNull("Hi", letter);
         System.out.println(a);
         System.out.println(b);
         System.out.println(c);
