@@ -14,11 +14,8 @@ public void addFront(int value){
         head = newNode;
         return;
     }
-    Node runner = this.head;
-    while(runner.next != null){
-        runner = runner.next;
-    }
-    runner.next = newNode;
+    newNode.next = head;
+    head = newNode;
 }
 
 public void addBack(int value){
