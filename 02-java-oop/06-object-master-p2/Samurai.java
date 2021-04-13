@@ -1,9 +1,9 @@
 public class Samurai extends Human {
-    private static int sumurai;
+    private static int samurai = 0;
     
     public Samurai(){
         health = 200;
-        this.sumurai = this.sumurai +=1;
+        samurai++;
     }
 
     public void deathBlow(Human player){
@@ -13,7 +13,7 @@ public class Samurai extends Human {
         System.out.printf("Death blow hit for %d \n", strike);
     }
 
-    public void howMany(){
-        System.out.printf("There are %d sumurai(s) \n", sumurai);
+    public static int howMany(){
+        return samurai;
     }
 }
