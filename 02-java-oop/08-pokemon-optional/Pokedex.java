@@ -3,31 +3,36 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
 public class Pokedex extends AbstractPokemon {
-
+    //arrayList holds Pokemon objects
     private  ArrayList<Pokemon> myPokemons = new ArrayList<Pokemon>(); 
+    //creates pokemon from pokemon class
     public Pokemon createPokemon(String name, int health, String type){ 
+            //from Pokemon class and adds pobject to myPokemons array
             myPokemons.add(new Pokemon(name, health, type));
+            //returns Pokemon from array
             return myPokemons.get(myPokemons.size() -1);
     }
-    public String myPokemons(){
-        return myPokemons.toString();
-    }
-
+    
+    // List Pokemons from myPokemons list first names
     public void listPokemon(){
         for(Pokemon poke: myPokemons){
             System.out.println(poke.getName());
         }
     }
-
-    public Pokemon getPokemon(String name){
+    public void searchPokemon(String name){
         Pokemon newPokemon = null;
         for(Pokemon item: myPokemons){
             if(item.getName().equals(name)){
                 System.out.println(item.getName() + name);
-                newPokemon = item;
-                return newPokemon; 
+                newPokemon = item; 
             }
-        }                
+        
+        }    
+    }
+    // gets a Pokemon from the Mypokemon list. if name not in list allows you to create pokemon
+    public Pokemon getPokemon(String name){
+        
+                    
         Scanner sc= new Scanner(System.in);
         System.out.println("There is no character byt that name");
         System.out.println("Please enter character name: ");
@@ -51,6 +56,7 @@ public class Pokedex extends AbstractPokemon {
         newPokemon = createPokemon(pName, health, type);
         return newPokemon;      
     }
+    // gets info a a single pokemon
     public String pokemonInfo(Pokemon pokemon){
         String name = pokemon.getName();
         int health = pokemon.getHealth();
