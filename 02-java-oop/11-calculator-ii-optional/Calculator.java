@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 public class Calculator implements CalculatorInterface{
-    double firstNumber; //part of the orginal assignment
-    double secondNumber; //part of the orginal assignment
-    double result;    //part of the orginal assignment
-    char operator; //part of the assignment
+    private double firstNumber; //part of the orginal assignment
+    private double secondNumber; //part of the orginal assignment
+    private double result;    //part of the orginal assignment
+    private char operator; //part of the 
+    Calculate head;
+
 
 public Calculator() {
 
@@ -40,65 +42,104 @@ public Calculator() {
 
     //This was for fun
     public Calculate createNum(double value, char operator){
-        valueList.add(new Calculate(value, operator));
-        return valueList.get(valueList.size() - 1);
+        int counter = 0;
+        Calculate newNode = new Calculate(value, operator);
+        if (head == null){
+            head = newNode;
+            counter++;
+            return head;
+            
+        }
+        else{
+            Calculate runner = head;
+            while(runner.next != null){
+                runner = runner.next;
+                counter++;
+            }
+            runner.next = newNode;
+            if(runner.next.operator == '='){
+                Calculate tail = new Calculate(0, '=');
+                runner.next.next = tail;
+            }
+            return runner;
+        }
+            
     }
     //last entry ends with a equals
-    public void endEquals(){
-        valueList.get(valueList.size()-1).operator = '=';
-    }
-    // perform operation any number of times with order of operations applied;
-    public double performOperationMul(){
-        endEquals();
-        double sumDifference = 0;
-        double product = 0;
-        for(int i = 0; i < valueList.size(); i++){    
-            //multiplication        
-            if(valueList.get(i).operator == '*'){
-                System.out.println(valueList.get(i).value);
-                System.out.println(valueList.get(i).operator);
-                System.out.println(valueList.get(i+1).value);
-                //get the multiplyer 
-                Calculate nextMul =  valueList.get(i+1);
-                //multiples the next value by current value
-                product = valueList.get(i).value * nextMul.value;
-                //saves the value in the correct place
-                nextMul.value = product;  
-                System.out.println(nextMul.value);
-                sumDifference = nextMul.value;
-            }
-            //division
-            else if(valueList.get(i).operator =='/'){
-                //get denominator
-                Calculate nextMul =  valueList.get(i+1);
-                product = valueList.get(i).value / nextMul.value;
-                nextMul.value = product;
-                sumDifference = nextMul.value;
-            }    
+    public double operation(){
+        double sum =0;
+        if(head == null){
+            System.out.println("There list is empty");
+            return sum;
         }
-        //addition
-        for(Calculate val: valueList){
-            if(val.operator == '+'){
-                System.out.println("+++++++");
-                System.out.println(val.value);
-                System.out.println(val.operator);
-                sumDifference += val.value;
-                System.out.println("+++");
-                System.out.println(sumDifference);
+        else{
+            Calculate runner = head;
+            while(runner.next != null){
+                if(runner.operator == '*'){
+                    runner.value = runner.value * runner.next.value;
+                    System.out.println(runner.value);
+                    runner.operator = runner.next.operator;
+                    if(runner.next.next == null){
+                        runner.next = null;
+                    }
+                    else{
+                        runner.next = runner.next.next;
+                    }   
+                }
+                else if(runner.operator == '/'){
+                    runner.value = runner.value / runner.next.value;
+                    runner.operator = runner.next.operator;
+                    if(runner.next.next == null){
+                        runner.next = null;
+                    }
+                    else{
+                        runner.next = runner.next.next;
+                    }
+                }
+                
+                else{
+                        runner = runner.next;
+                    }
                 
             }
-            //subtraction
-            else if(val.operator == '-'){
-                System.out.println("---");
-                sumDifference += val.value;
+            //multiplying by zero returns 0 and it is not possible to divide by 0
+            if(runner.next == null){
+                
+                runner.operator = '+';
             }
-        }
-        return sumDifference;
-
-        } 
-        
-}
-    
+            runner = head;
+            char operator = '+';
+            while(runner.next != null){
+                if(operator == '+'){
+                    System.out.println(runner.value);
+                    sum += runner.value;
+                    // System.out.println(sum);
+                    operator = runner.operator;
+            }
+            else if (operator == '-'){
+                System.out.println(runner.value);
+                sum -= runner.value;
+                // System.out.println(sum);
+                operator = runner.operator;
+            }
+            operator = runner.operator;
+            runner = runner.next;
+            } 
+            if(runner.next == null){
+                if(operator == '+'){
+                    System.out.println(runner.value);
+                    sum+= runner.value;
+                }
+                else if(operator == '-'){
+                    System.out.println(runner.value);
+                    sum -= runner.value;
+                }
+            }
+            System.out.println(sum);
+            return sum;
+        }   
+    }
+}    
 
 
 
