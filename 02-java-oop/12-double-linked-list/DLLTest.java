@@ -8,7 +8,7 @@ public class DLLTest {
         Node n5 = new Node(40);
         Node n6 = new Node(20);
         Node n7 = new Node(10);
-
+        
         example.push(n1);
         example.push(n2);
         example.push(n3);
