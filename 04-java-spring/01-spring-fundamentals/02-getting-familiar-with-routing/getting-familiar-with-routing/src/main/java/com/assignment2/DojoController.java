@@ -1,10 +1,11 @@
 package com.assignment2;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class DojoController {
 	
 	@RequestMapping("/dojo")
@@ -13,27 +14,18 @@ public class DojoController {
 	}
 	
 	@RequestMapping("/dojo/{location}")
-	public String dojoCenter(@PathVariable("location") String location) {
-	
+	public String dojoCenter(@PathVariable("location") String location, Model viewmodel){
+		viewmodel.addAttribute("dojoname", location);
 		switch(location) {
 		
 		case "burbank":
-			return "Burbank Dojo is located in Southern California";
+			return "index.jsp";
 			
 		case "san-jose":
-			return "SJ dojo is the headquarters";
+			return "index.jsp";
 			
 		default:
-			return String.format("%s is pretty sweet!", location);
+			return "index.jsp";
 		}
-	}
-	@RequestMapping("/burbank")
-	public String burbank() {
-		return "Burbank Dojo is located in Southern California";
-	}
-	
-	@RequestMapping("/san-jose")
-	public String sanJose() {
-		return "SJ dojo is the headquarters";
 	}
 }

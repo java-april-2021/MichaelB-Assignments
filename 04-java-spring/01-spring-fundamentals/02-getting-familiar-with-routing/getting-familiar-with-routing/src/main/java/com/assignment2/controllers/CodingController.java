@@ -1,15 +1,15 @@
 package com.assignment2.controllers;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class CodingController {
 	@RequestMapping("/coding")
 	public String hello(){
-	return "Help Comding Dojo";	
+	return "index.jsp";	
 	}
-	
 	@RequestMapping("/coding/python")
 	public String helloPython() {
 		return "Python/Django was awesome!";
