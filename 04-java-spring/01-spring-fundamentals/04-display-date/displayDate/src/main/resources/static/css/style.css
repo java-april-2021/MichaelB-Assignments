@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+*{
+	margin:0;
+	padding:0;	
+}
+
+#panel{
+	margin: 16% 0% 0% 0%;
+}
+
+a{
+	margin: 0% 0% 0% 25%;
+}
+
+

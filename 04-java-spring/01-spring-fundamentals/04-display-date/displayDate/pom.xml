@@ -8,11 +8,11 @@
 		<version>2.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.assignment2</groupId>
+	<groupId>com.displayDate</groupId>
 	<artifactId>displayDate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>displayDate</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Display date assignment</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -38,12 +38,18 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
 		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
+		    <groupId>org.webjars.bower</groupId>
+		    <artifactId>jquery</artifactId>
+		    <version>3.6.0</version>
 		</dependency>
 	</dependencies>
 

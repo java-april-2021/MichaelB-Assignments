@@ -6,8 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Display Date</title>
+<link rel="stylesheet" type= "text/css" href="/css/style.css">
 </head>
 <body>
-<a herf=
+    <div id = "panel">
+        <a href="/date">Date Template</a>
+        <a href="/time">Time Template</a>
+    </div>
+
 </body>
 </html>
