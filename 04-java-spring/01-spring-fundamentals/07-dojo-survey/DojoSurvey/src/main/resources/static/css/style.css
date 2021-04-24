@@ -1,0 +1,37 @@
+*{
+	margin:0;
+	padding:0;
+}
+form{
+	width:25%;
+	margin: 10% 0% 0% 35%;
+}
+#name{
+	margin: 0% 0% 0% 13%;
+}
+
+#location{
+	margin: 0% 0% 0% 16%;
+}
+
+#lang{
+	margin: 0% 0% 0% 3%;
+}
+
+#comment{
+	margin: 3% 0% 0% 0%;
+}
+button{
+	margin: 0% 0% 0% 68%;
+}
+
+.info{
+	margin: 10% 0% 0% 41%
+}
+a{
+	margin: 3% 0% 0% 46%;
+	padding:.1%;
+	background-color: gray;
+	border-radius:14%;
+	font-weight:bold;
+}
