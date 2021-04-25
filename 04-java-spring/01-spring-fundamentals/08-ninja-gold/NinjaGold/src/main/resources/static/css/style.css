@@ -1,0 +1,45 @@
+*{
+	padding:0;
+	margin:0;
+}
+
+.container{
+	width:100%;
+}
+.building{
+	display: inline-block;
+	width:90%;
+}
+form{
+	display: inline-block;
+	margin: 13% 0% 0% 15%;
+	border: 2px solid black;
+}
+
+form > h3{
+	margin: 0% 0% 14% 25%;
+}
+
+form > p{
+	margin: 0% 0% 14% 0%;
+}
+
+form > button{
+	margin: 0% 0% 0% 17%;
+}
+.red{
+	color: red;
+}
+.green{
+	color: green;
+}
+.activity{
+	overflow-y: auto;
+	width: 40%;
+	max-height: 300px;
+	margin: 0% 0% 0% 25%;
+	border: 3px solid black;
+}
+.actTitle{
+	margin: 5% 0% 0% 25%;
+}
