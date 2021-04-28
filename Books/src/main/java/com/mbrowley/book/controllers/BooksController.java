@@ -45,8 +45,14 @@ public class BooksController {
 	}
 	
 	
+	//book form
+	@GetMapping("/books/new")
+	public String newBook(@ModelAttribute("book") Book book) {
+		return "/books/new.jsp";
+	}
+	
 	//creates a book
-	@ PostMapping("/books")
+	@PostMapping("/books/create")
 	public String createBook(@Valid @ModelAttribute("book") Book book, BindingResult result){
 		if (result.hasErrors()){
 			return "/books/new.jsp";
@@ -55,6 +61,7 @@ public class BooksController {
 			return "redirect:/books";
 		}
 	}
+	
 	
 	
 	
