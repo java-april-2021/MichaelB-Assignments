@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.mbrowley.book.model.Book;
 import com.mbrowley.book.service.BookService;
@@ -30,17 +31,23 @@ public class BooksController {
 			model.addAttribute("books", books);
 			return "/books/index.jsp";
 		}
-	//finds a single book
+	//show a single book
 	@GetMapping("/books/{index}")
 	public String findBookByIndex(Model viewModel, @PathVariable("index") Long index) {
 		Book book = bService.getOneBook(index);
 		viewModel.addAttribute("book", book);
 		return "/books/showBook.jsp";
 	}
-	//deletebook
+	//delete book
 	@DeleteMapping("/books/delete/{index}")
 	public String deleteBookByindex(Model viewModel, @PathVariable("index") Long index){
-		bService.deleteBook(index);
+		this.bService.deleteBook(index);
+		return "redirect:/books";
+	}
+	
+	@RequestMapping("/books/delete/{index}")
+	public String deleteBook(@PathVariable("index") Long index) {
+		this.bService.deleteBook(index);
 		return "redirect:/books";
 	}
 	
@@ -62,7 +69,23 @@ public class BooksController {
 		}
 	}
 	
+	//edits a book
+	@GetMapping("/books/edit/{id}")
+	public String editBook(@PathVariable("id") Long id, Model model) {
+		Book book = bService.getOneBook(id);
+		if(book != null) {
+			model.addAttribute("book", book);
+			return "/books/edit.jsp";
+		}else {
+			return "redirect:/books";
+		}
+	}	
 	
+	@PutMapping("books/edit/{id}")
+	public String updatedBook(@PathVariable("id") Long id, Book updatedBook){
+		this.bService.updateBook(updatedBook);
+		return "redirect:/books";
+	}
 	
 	
 }

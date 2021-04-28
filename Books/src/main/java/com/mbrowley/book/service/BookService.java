@@ -36,5 +36,10 @@ public class BookService {
 		this.bRepository.deleteById(id);
 	}
 	
+	//update a book
+	public Book updateBook(Book updatedBook) {
+		return this.bRepository.save(updatedBook);
+	}
+	
 	
 }

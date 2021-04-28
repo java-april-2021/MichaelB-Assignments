@@ -8,6 +8,7 @@
 </head>
 <body>
 	<div>
+        <a href="/books">Back to Books</a>
 		<h1>New Book</h1>
 		<form:form action="/books/create" method="post" modelAttribute="book">
     	<p>
