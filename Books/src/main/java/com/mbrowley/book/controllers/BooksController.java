@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mbrowley.book.model.Book;
 import com.mbrowley.book.service.BookService;
@@ -45,11 +46,6 @@ public class BooksController {
 		return "redirect:/books";
 	}
 	
-	@RequestMapping("/books/delete/{index}")
-	public String deleteBook(@PathVariable("index") Long index) {
-		this.bService.deleteBook(index);
-		return "redirect:/books";
-	}
 	
 	
 	//book form
@@ -81,11 +77,10 @@ public class BooksController {
 		}
 	}	
 	
+	//save edits
 	@PutMapping("books/edit/{id}")
 	public String updatedBook(@PathVariable("id") Long id, Book updatedBook){
 		this.bService.updateBook(updatedBook);
 		return "redirect:/books";
 	}
-	
-	
 }

@@ -1,0 +1,21 @@
+
+*{
+	padding: 0;
+	margin: 0;
+}
+h1{
+	margin: 0% 0% 0% 15%;
+}
+
+.editForm{
+	width: 15%;
+	margin: 5% 0% 0% 40%;
+}
+
+div > a{
+	display: inline-block;
+}
+
+.linkButt{
+	display: inline-block;
+}
