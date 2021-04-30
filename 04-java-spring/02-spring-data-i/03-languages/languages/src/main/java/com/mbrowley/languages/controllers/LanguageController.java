@@ -36,8 +36,10 @@ public class LanguageController {
 	
 	//add a language
 	@PostMapping("languages")
-	public String addLang(@Valid @ModelAttribute("language") Language language, BindingResult result) {
+	public String addLang(@Valid @ModelAttribute("language") Language language, BindingResult result, Model viewModel) {
 		if(result.hasErrors()) {
+			List<Language> langs = langService.getAllLanguages();
+			viewModel.addAttribute("langs", langs);
 			return "/index.jsp";
 		}else {
 			langService.createLang(language);
