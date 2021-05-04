@@ -24,7 +24,7 @@
 	    		<a href="/languages">Dashboard</a>
 			</div>
 			<div class = "editForm">
-				<form:form method="PUT" action="/language/${language.id}" modelAttribute="language">
+				<form:form method="PUT" action="/languages/${language.id}" modelAttribute="language">
 		    		<p class ="form-group">
 				        <form:label path="name">Name</form:label>
 				        <form:errors path="name"/>

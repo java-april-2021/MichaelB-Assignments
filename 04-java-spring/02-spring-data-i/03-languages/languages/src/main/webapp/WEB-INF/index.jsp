@@ -36,7 +36,7 @@
 						    <td> <a href="/languages/${lang.id}/edit">Edit</a>
 						    		<form class="linkButt" action="/language/${lang.id}" method="POST" >
 						    		<input type="hidden" name="_method" value="delete">
-						    		<input type="submit"  class="btn btn-link" value = Delete>
+						    		<input type="submit" class="btn btn-link"  value = Delete>
 						    		</form>
 						    </td>
 						</tr>
