@@ -1,0 +1,50 @@
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.product-table{
+	width:30%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.category-table{
+	vertical-align: top;
+	width:30%;
+	display: inline-block;
+	height: 10%;
+	overflow-y: auto;
+}
+
+.product-form{
+	width: 20%;
+	margin: 10% 0% 0% 40%;
+}
+.category-form{
+	width:20%;
+	margin: 10% 0% 0% 40%;
+}
+
+.product-category{
+	width: 20%;
+	display: inline-block;
+
+}
+.product-category{
+	width:20%;
+	margin: 5% 0% 0% 15%;
+	display: inline-block;
+}
+
+.category-list{
+	display: inline-block;
+	width:40%;
+	margin: 0% 0% 0% 20%;
+}
+
+.category > h2 {
+	margin: 0% 0% 5% 19%;
+}
+
