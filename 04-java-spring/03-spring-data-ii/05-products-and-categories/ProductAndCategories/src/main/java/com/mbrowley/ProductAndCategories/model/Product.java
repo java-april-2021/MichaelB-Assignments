@@ -36,6 +36,7 @@ public class Product {
 	)
 	
 	private List<Category> categories;
+	
 	public Product() {
 		
 	}
