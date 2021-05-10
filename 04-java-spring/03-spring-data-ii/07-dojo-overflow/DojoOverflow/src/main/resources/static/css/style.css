@@ -1,0 +1,51 @@
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.questionForm{
+	width: 25%;
+	margin: 5% 0% 0% 31%;
+}
+.questionForm > h1{
+	margin: 0% 0% 10% 0%;
+}
+
+.subject-tags{
+	border: 1px solid black;
+	margin: 0% 1% 0% 1%;
+	padding: .25%;
+}
+
+
+.answers{
+	margin: 5% 0% 0% 5%;	
+}
+
+.answers > table{
+	display: inline-block;
+	width: 30%;
+	margin: 0% 5% 0% 0%;
+}
+
+.answers > form{
+	border: 1px solid black;
+	display: inline-block;
+	padding: 2%;
+	width:25%;
+	vertical-align: top;
+}
+
+.show-question{
+	margin: 4% 0% 0% 7%;
+}
+
+.show-question > h1{
+	margin: 0% 0% 2% 0%;
+}
+
+.questions-table{
+	width: 70%;
+	margin: 4% 0% 0% 8%;
+}
