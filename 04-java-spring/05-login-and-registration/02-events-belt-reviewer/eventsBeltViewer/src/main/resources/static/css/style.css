@@ -1,0 +1,58 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.register{
+	width: 25%;
+	display: inline-block;
+}
+
+.login{
+	width:25%;
+	display: inline-block;
+}
+
+.InState{
+	width: 46%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.outOfState{
+	width: 46%;
+	display: inline-block;
+	vertical-align: top;
+}
+.eventForm{
+	width: 20%;
+	display: inline-block;
+}
+
+.event-table{
+	width: 40%;
+	display: inline-block;
+}
+
+.messages-pane{
+	display: inline-block;
+	width:25%;
+}
+.edit-event{
+	width: 30%;
+}
+.messages-pane{
+	height: 1500px;
+}
+.messages{
+	border: 1px solid black;
+	height: 10%;
+	overflow-y: auto;
+}
+
+.delete-event{
+	display: inline-block;
+}
+span{
+	font-weight: bolder;
+}
